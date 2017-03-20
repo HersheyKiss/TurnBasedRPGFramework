@@ -1,0 +1,1 @@
+this package will be populated with panels created in Netbeans (for ease of creating the layout of the Swing Components)
