@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graphicstestbed;
+package graphics;
 
 /**
  *
@@ -64,10 +64,12 @@ public class OptionsPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void returnToMainButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnToMainButtonActionPerformed
-        // TODO add your handling code here:
-        //make this delete the Options panel and replace it with the MainMenu panel
-    }//GEN-LAST:event_returnToMainButtonActionPerformed
+    private void returnToMainButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        //replaces this with the main menu when the request is made to return to the main menu
+    	this.getParent().add(new MainMenu());
+    	this.setVisible(false);
+    	this.getParent().remove(this);
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

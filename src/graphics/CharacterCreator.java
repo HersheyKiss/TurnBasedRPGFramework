@@ -3,7 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graphicstestbed;
+package graphics;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -71,8 +74,8 @@ public class CharacterCreator extends javax.swing.JPanel {
         instructionsLabel = new javax.swing.JLabel();
         instructionTextPanel1 = new javax.swing.JScrollPane();
         instructionTextScrollArea = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        finishCreationButton = new javax.swing.JButton();
+        cancelCreationButton = new javax.swing.JButton();
 
         setLayout(new java.awt.GridBagLayout());
 
@@ -404,10 +407,15 @@ public class CharacterCreator extends javax.swing.JPanel {
         instructionTextScrollArea.setMargin(new java.awt.Insets(0, 0, 0, 0));
         instructionTextPanel1.setViewportView(instructionTextScrollArea);
 
-        jButton1.setText("Finish Creation");
+        finishCreationButton.setText("Finish Creation");
 
-        jButton2.setText("Cancel Creation");
-
+        cancelCreationButton.setText("Cancel Creation");
+        cancelCreationButton.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				cancelCreationButtonActionPerformed(e);
+			}
+        });
+        
         javax.swing.GroupLayout instructionPanelLayout = new javax.swing.GroupLayout(instructionPanel);
         instructionPanel.setLayout(instructionPanelLayout);
         instructionPanelLayout.setHorizontalGroup(
@@ -421,17 +429,17 @@ public class CharacterCreator extends javax.swing.JPanel {
                     .addComponent(instructionTextPanel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(instructionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(cancelCreationButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(finishCreationButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         instructionPanelLayout.setVerticalGroup(
             instructionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(instructionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(finishCreationButton)
                 .addGap(12, 12, 12)
-                .addComponent(jButton2)
+                .addComponent(cancelCreationButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instructionPanelLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
@@ -458,7 +466,13 @@ public class CharacterCreator extends javax.swing.JPanel {
     private void previousSpriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousSpriteButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_previousSpriteButtonActionPerformed
-
+    
+    private void cancelCreationButtonActionPerformed(ActionEvent evt){
+    	//return to the main menu when the cancel button is pressed
+    	this.getParent().add(new MainMenu());
+    	this.setVisible(false);
+    	this.getParent().remove(this);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdvancedInfoPanel;
@@ -486,8 +500,8 @@ public class CharacterCreator extends javax.swing.JPanel {
     private javax.swing.JLabel instructionsLabel;
     private javax.swing.JSpinner intSpinner;
     private javax.swing.JLabel intStatLevel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton finishCreationButton;
+    private javax.swing.JButton cancelCreationButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSpinner levelSpinner;
     private javax.swing.JButton nextSpriteButton;
