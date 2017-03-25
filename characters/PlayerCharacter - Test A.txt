@@ -1,0 +1,8 @@
+name:testnameCharacterA
+level:1
+consitution:10
+strength:5
+dexterity:6
+wisdom:8
+intelligence:6
+willpower:3

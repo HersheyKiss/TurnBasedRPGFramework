@@ -15,6 +15,8 @@ public class Game {
 	public Game(){
 		//TODO: set the look and feel of the program
 		frame.setUndecorated(false);
+		frame.setResizable(true);
+		frame.setSize(640, 480);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(new MainMenu());
 		frame.pack();

@@ -17,6 +17,12 @@ public class World {
 	}
 	
 	public Tile getTile(int x, int y){
+		if(x >= tileArray.length || y >= tileArray[0].length){//hand back a nullTile if the requested tile is not on the world
+			return Tile.nullTile;
+		}
+		if(tileArray[x][y] == null){//if the space exists, but doesn't have a valid tile, return a nullTile
+			return Tile.nullTile;
+		}
 		return tileArray[x][y];
 	}
 	

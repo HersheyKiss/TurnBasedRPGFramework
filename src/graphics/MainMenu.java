@@ -11,6 +11,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import threadWorkers.CharacterListCreator;
+import world.World;
 
 /**
  *
@@ -232,6 +233,10 @@ public class MainMenu extends javax.swing.JPanel {
 
     private void beginTestWorldButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginTestWorldButtonActionPerformed
     	//begin the test world
+    	World world = new World(10, 10);
+    	this.getParent().add(new GameViewPanel(world));
+    	this.setVisible(false);
+    	this.getParent().remove(this);
     }
     
     private void quitGameButtonActionPerformed(ActionEvent event){

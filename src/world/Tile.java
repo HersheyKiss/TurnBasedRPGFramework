@@ -15,11 +15,30 @@ public class Tile{
 	public Tile(){
 	}
 	
+	public Tile(Sprite sprite){
+		this.sprite = sprite;
+		this.solid = false;
+	}
+	
 	public Tile(Sprite sprite, ArrayList<Entity> occupants, boolean solid){
 		this.sprite = sprite;
 		this.occupants = occupants;
 		this.solid = solid;
 	}
+	
+	public void setSprite(Sprite sprite){
+		this.sprite = sprite;
+		this.occupants = new ArrayList<Entity>();
+		this.solid = false;
+	}
+	
+	public Sprite getSprite(){
+		if(this.sprite == null){//if the sprite doesn't exist for any reason, return the default 'nullSprite' 
+			return Sprite.nullSprite;
+		}
+		return this.sprite;
+	}
+	
 	
 	/**
 	 * @param entity The entity to be added to the array
@@ -40,5 +59,11 @@ public class Tile{
 	public boolean isSolid(){
 		return solid;
 	}
+	
+	public void setSolid(boolean solid){
+		this.solid = solid;
+	}
+	
+	public static Tile nullTile = new Tile(Sprite.nullSprite);
 	
 }

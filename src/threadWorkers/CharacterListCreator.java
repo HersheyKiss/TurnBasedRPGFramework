@@ -1,13 +1,10 @@
 package threadWorkers;
 
-import io.fileFilters.CharacterFileFilter;
-
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.io.FileFilter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.Action;

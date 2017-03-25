@@ -6,6 +6,7 @@ public class TheMainClass {
 	
 	public static void main(String[] args){
 		System.out.println("TheMainClass: New instance started");
+		
 	}
 	
 }
